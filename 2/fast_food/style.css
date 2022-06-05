@@ -1,0 +1,29 @@
+body {
+    margin: 0;
+    font-family: sans-serif Verdana;
+}
+
+form {
+    margin-left: 35%;
+    margin-right: 35%;
+    font-size: 25px;
+}
+
+form h3 {
+    color: peru;
+}
+
+.resultBox {
+    color: rebeccapurple;
+}
+
+.resultBox div {
+    border: 5px solid darkseagreen;
+}
+
+.resultBox p span {
+    color: orange;
+}
+
+
+

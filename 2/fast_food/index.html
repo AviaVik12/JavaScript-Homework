@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fast Food</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form action="#" id="burgerForm">
+        <h3 id="header">
+            CREATE YOUR OWN BURGER
+        </h3>
+
+        <div class="choose">
+            <h4>Choose your burger's size:</h4>
+            <input type="radio" name="size" id="bigBurger" value="big"
+                   class="burgerInput" data-price="100" data-calories="40"
+                   checked>
+            <label for="bigBurger">Big: 100rub, 40cal</label>
+            <br>
+            <input type="radio" name="size" id="smallBurger" value="small"
+                   class="burgerInput" data-price="50" data-calories="20"
+                   checked>
+            <label for="smallBurger">Small: 50rub, 20cal</label>
+        </div>
+
+        <div class="choose">
+            <h4>Choose your burger's fillings:</h4>
+            <input type="radio" name="filling" id="cheese" value="cheese"
+                   class="burgerInput" data-price="10" data-calories="20"
+                   checked>
+            <label for="cheese">Cheese: 10rub, 20cal</label>
+            <br>
+            <input type="radio" name="filling" id="salad" value="salad"
+                   class="burgerInput" data-price="20" data-calories="5"
+                   checked>
+            <label for="salad">Salad: 20rub, 5cal</label>
+            <br>
+            <input type="radio" name="filling" id="potato" value="potato"
+                   class="burgerInput" data-price="15" data-calories="10"
+                   checked>
+            <label for="potato">Potato: 15rub, 10cal</label>
+        </div>
+
+        <div class="choose">
+            <h4>Choose your burger's toppings:</h4>
+            <input type="checkbox" name="toppings" id="seasoning"
+                   value="seasoning" class="burgerInput" data-price="15"
+                   data-calories="0" checked>
+            <label for="seasoning">Seasoning: 15rub, 0cal</label>
+            <br>
+            <input type="checkbox" name="toppings" id="mayo" value="mayo"
+                   class="burgerInput" data-price="20" data-calories="5"
+                   checked>
+            <label for="mayo">Mayo: 20rub, 5cal</label>
+        </div>
+
+        <br>
+
+        <div class="resultBox">
+            <div id="create">
+                Create your burger
+            </div>
+
+            <p id="result">
+                Your burger's price is <span id="price">0</span> rubles
+                <br>
+                Your burger has <span id="calories">0</span> calories
+            </p>
+        </div>
+    </form>
+
+    <script src="script.js"></script>
+
+    <script>
+        window.onload = () => {
+            document
+                .getElementById("create")
+                .addEventListener('click', () => {
+                    let burger = new Burger('size', 'filling', 'toppings');
+                    console.log(burger);
+                    burger.showSum('#price', '#calories');
+                });
+        }
+    </script>
+</body>
+</html>
